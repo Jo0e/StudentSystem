@@ -71,7 +71,7 @@ namespace P01_StudentSystem.ForManger
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter course name: ");
-            Console.Clear();
+            Console.ResetColor();
             string name = Console.ReadLine();
             while (string.IsNullOrWhiteSpace(name))
             {
@@ -82,7 +82,7 @@ namespace P01_StudentSystem.ForManger
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter start date (yyyy-mm-dd): ");
-            Console.Clear();
+            Console.ResetColor();
             DateTime startDate;
             while (!DateTime.TryParse(Console.ReadLine(), out startDate))
             {
@@ -92,7 +92,7 @@ namespace P01_StudentSystem.ForManger
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter end date (yyyy-mm-dd): ");
-            Console.Clear();
+            Console.ResetColor();
             DateTime endDate;
             while (!DateTime.TryParse(Console.ReadLine(), out endDate))
             {
@@ -102,7 +102,7 @@ namespace P01_StudentSystem.ForManger
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter price:");
-            Console.Clear();
+            Console.ResetColor();
             double price;
             while (!double.TryParse(Console.ReadLine(), out price) || price <=0 )
             {
@@ -120,8 +120,13 @@ namespace P01_StudentSystem.ForManger
             };
             Context.Courses.Add(course);
             Context.SaveChanges();
+            var idForCourse = course.CourseId;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"                                        ->The id for this Course is: {idForCourse}");
             Console.WriteLine($"                                        ->Course added successfully.");
-            Thread.Sleep(1100);
+            Console.ResetColor();
+            Console.WriteLine($"Prese Enter to continue.");
+            Console.ReadLine();
             AddData();
         }
 
@@ -213,8 +218,13 @@ namespace P01_StudentSystem.ForManger
             };
             Context.Students.Add(student);
             Context.SaveChanges();
+            var idForStudent = student.StudentId;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"                                        ->The id for this student is: {idForStudent}");
             Console.WriteLine($"                                        ->Student added successfully.");
-            Thread.Sleep(1100);
+            Console.ResetColor();
+            Console.WriteLine($"Prese Enter to continue.");
+            Console.ReadLine();
             AddData();
         }
 
