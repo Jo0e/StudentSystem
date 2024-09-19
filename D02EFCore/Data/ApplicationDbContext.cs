@@ -50,6 +50,8 @@ namespace P01_StudentSystem.Data
            
                 
         }
+
+        // THE SEED METHOD TO ADD SAMPEL DATA
         public void Seed()
         {
             if (!Students.Any())

@@ -10,6 +10,7 @@ namespace P01_StudentSystem.Models
     {
         public int StudentId { get; set; }
         public string Name { get; set; } 
+        // I KNOW IN THE TASK DIDN'T HAVE PASSWORD ROW BUT IT TO MAKE ACCOUNTS FOR STUDENTS
         public string Password { get; set; }
         public string? PhoneNumber { get; set; }
         public DateTime RegisteredOn { get; set; }

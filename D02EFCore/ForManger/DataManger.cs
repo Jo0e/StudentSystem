@@ -14,6 +14,7 @@ namespace P01_StudentSystem.ForManger
     {
         MangerAccess MangerAccess { get; set; }
         private ApplicationDbContext Context;
+        //USED THE OLD WAY CUZ THE get; set; WAY GET SOME ERRORS ¯⁠\⁠_⁠ಠ⁠_⁠ಠ⁠_⁠/⁠¯
         public DataManger(ApplicationDbContext context)
         {
             Context = context;
@@ -21,13 +22,13 @@ namespace P01_StudentSystem.ForManger
         
         public void AddData()
         {
+            #region MENU
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
             string menu = " \t\t\t\t   ╔════════════════════════════╗\r\n \t\t\t\t   ║\t\t\t        ║\r\n \t\t\t\t   ║    1 - To Add Course       ║\r\n \t\t\t\t   ║    2 - To Add Student\t║\r\n  \t\t\t\t   ║    3 - To Mange Resource   ║\r\n  \t\t\t\t   ║    4 - Back to last menu   ║\r\n \t\t\t\t   ║ \t\t\t        ║\r\n\t\t\t\t   ╚════════════════════════════╝\r\n";
             Console.WriteLine($"{menu}");
             Console.Write($"                                        ->Enter Your chose: ");
             Console.ResetColor();
-            //Console.Write($"                                                ");
             string typeOfAction = Console.ReadLine();
             while (typeOfAction != "1" && typeOfAction != "2" && typeOfAction != "3" && typeOfAction != "4")
             {
@@ -36,26 +37,24 @@ namespace P01_StudentSystem.ForManger
                 Console.ResetColor();
                 typeOfAction = Console.ReadLine();
             }
-
+            #endregion
             if (typeOfAction == "1")
             {
-                //To Add Course 
                 AddCourse();
             }
             else if (typeOfAction == "2")
             {
-                //To Add Student
                 AddStudent();
 
             }
             else if (typeOfAction == "3")
             {
-                //To Mange Resource
                 MangeResource();
 
             }
             else
             {
+                //TO GET BACK TO LAST MENU
                 MangerAccess = new MangerAccess();
                 MangerAccess.Actions();
             }
@@ -63,12 +62,14 @@ namespace P01_StudentSystem.ForManger
 
         public void AddCourse()
         {
+            #region BARRIERS
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine($"*======================================================================================================================*");
             Console.ResetColor();
             Console.WriteLine();
+            #endregion
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter course name: ");
             Console.ResetColor();
@@ -132,13 +133,14 @@ namespace P01_StudentSystem.ForManger
 
         public void AddStudent()
         {
+            #region BARRIERS
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine($"*======================================================================================================================*");
             Console.ResetColor();
-
             Console.WriteLine();
+            #endregion
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter student name: ");
             Console.ResetColor();
@@ -194,7 +196,7 @@ namespace P01_StudentSystem.ForManger
                 {
                     break;
                 }
-
+                // ALL OF THAT TO MAKE THE BIRTHDAY OPTIONAL ಠ⁠_⁠ಠ
                 if (DateTime.TryParse(birthdayInput, out DateTime parsedBirthday))
                 {
                     birthday = parsedBirthday;
@@ -221,6 +223,7 @@ namespace P01_StudentSystem.ForManger
             var idForStudent = student.StudentId;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"                                        ->The id for this student is: {idForStudent}");
+                                                                        // YOU WILL NEED THE ID TO LOGIN AS STUDENT LATER
             Console.WriteLine($"                                        ->Student added successfully.");
             Console.ResetColor();
             Console.WriteLine($"Prese Enter to continue.");
@@ -230,13 +233,15 @@ namespace P01_StudentSystem.ForManger
 
         public void MangeResource()
         {
+            #region BARRIERS
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine($"*======================================================================================================================*");
             Console.ResetColor();
-
             Console.WriteLine();
+            #endregion
+            // I GOTTA DO LESS BANNERS AND COLORS I KNOW (⁠●⁠_⁠_⁠●⁠) 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter Resource name: ");
             Console.ResetColor();
@@ -298,6 +303,7 @@ namespace P01_StudentSystem.ForManger
                 url = Console.ReadLine();
 
             }
+            
             ResourceType resourceType;
             if (url.Contains("video"))
             {

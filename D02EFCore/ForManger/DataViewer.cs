@@ -23,6 +23,7 @@ namespace P01_StudentSystem.ForManger
         public void DataView()
         {
             Console.Clear();
+            #region MENU
             Console.ForegroundColor = ConsoleColor.Green;
             string menu = $" \t\t\t\t   ╔════════════════════════════╗\r\n \t\t\t\t   ║\t\t\t        ║\r\n \t\t\t\t   ║    1 - To View Activities  ║\r\n \t\t\t\t   ║    2 - To View Course      ║\r\n  \t\t\t\t   ║    3 - To View Students    ║\r\n  \t\t\t\t   ║    4 - To View Homework    ║\r\n  \t\t\t\t   ║    5 - To View Resources   ║\r\n  \t\t\t\t   ║    6 - Back to last menu   ║\r\n \t\t\t\t   ║ \t\t\t        ║\r\n\t\t\t\t   ╚════════════════════════════╝";
             Console.WriteLine($"{menu}");
@@ -36,10 +37,12 @@ namespace P01_StudentSystem.ForManger
                 Console.ResetColor();
                 typeOfAction = Console.ReadLine();
             }
+            #endregion
             Context = new ApplicationDbContext();
             if (typeOfAction == "1")
             {
-                //to view all
+                // THIS VIEWS EVERY STUDENT AND EVERY COURSE THEY ASSIGNED TO
+
                 var studentCourse = Context.StudentCourses.Include(e=>e.Student).Include(e=>e.Course).ToList();
                 foreach (var item in studentCourse)
                 {
@@ -57,7 +60,6 @@ namespace P01_StudentSystem.ForManger
             }
             else if (typeOfAction == "2")
             {
-                //To View Course 
                 var courses = Context.Courses.ToList();
                 foreach (var item in courses)
                 {
@@ -74,7 +76,6 @@ namespace P01_StudentSystem.ForManger
             }
             else if (typeOfAction == "3")
             {
-                //To View Student
                 var students = Context.Students.ToList();
                 foreach (var item in students)
                 {
@@ -108,7 +109,6 @@ namespace P01_StudentSystem.ForManger
             }
             else if (typeOfAction == "5")
             {
-                //To View Resource
                 var resource = Context.Resources.Include(e => e.Course).ToList();
                 foreach (var item in resource)
                 {
@@ -126,6 +126,7 @@ namespace P01_StudentSystem.ForManger
             
             else
             {
+                // BACK AGAIN TO LAST MENU
                 MangerAccess = new MangerAccess();
                 MangerAccess.Actions();
             }

@@ -21,14 +21,12 @@ namespace P01_StudentSystem
         }
         public void PresentStartPageCall()
         {
-            #region inm
+            #region MENU
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            //Console.WriteLine($"\t\t╔════════════════════════════════════════════════════════════════════╗\r\n\t\t║___██╗____██╗███████╗██╗______██████╗_██████╗_███╗___███╗███████╗___║\r\n\t\t║___██║____██║██╔════╝██║_____██╔════╝██╔═══██╗████╗_████║██╔════╝___║\r\n\t\t║___██║_█╗_██║█████╗__██║_____██║_____██║___██║██╔████╔██║█████╗_____║\r\n\t\t║___██║███╗██║██╔══╝__██║_____██║_____██║___██║██║╚██╔╝██║██╔══╝_____║\r\n\t\t║___╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║_╚═╝_██║███████╗___║\r\n\t\t║____╚══╝╚══╝_╚══════╝╚══════╝_╚═════╝_╚═════╝_╚═╝_____╚═╝╚══════╝___║\r\n\t\t║____________________________________________________________________║\r\n\t\t╚════════════════════════════════════════════════════════════════════╝");
             Console.WriteLine($"\r\n                              __  __      _        __  __              \r\n                             |  \\/  |__ _(_)_ _   |  \\/  |___ _ _ _  _ \r\n                             | |\\/| / _` | | ' \\  | |\\/| / -_| ' | || |\r\n                             |_|  |_\\__,_|_|_||_| |_|  |_\\___|_||_\\_,_|\r\n                                                                       \r\n");
             Console.WriteLine($" \t\t\t\t   ╔════════════════════════════╗\r\n \t\t\t\t   ║\t\t\t        ║\r\n \t\t\t\t   ║    1 - You are a Manager   ║\r\n \t\t\t\t   ║    2 - You are a Student   ║\r\n  \t\t\t\t   ║    3 - Exit                ║\r\n \t\t\t\t   ║ \t\t\t        ║\r\n\t\t\t\t   ╚════════════════════════════╝\r\n");
             Console.Write($"                                        ->Enter Your chose: ");
             Console.ResetColor();
-            //Console.Write($"                                                ");
             string typeOfUser = Console.ReadLine();
             while ( typeOfUser !="1" && typeOfUser !="2" && typeOfUser != "3")
             {
@@ -39,6 +37,7 @@ namespace P01_StudentSystem
 
             }
             #endregion
+
             if (typeOfUser == "1")
             {
                 MangerAccess = new MangerAccess();
@@ -46,11 +45,21 @@ namespace P01_StudentSystem
             }
             else if (typeOfUser == "2") 
             {
+                // STUDENT HAS TO VERIFY HIS ID AND PASSWORD FIRST BEFORE GETING TO THE MENU
                 StudentAccess = new StudentAccess();
                 StudentAccess.Verifying();
-
             }
-            else if (typeOfUser == "3") { }
+            else if(typeOfUser == "3") 
+            {
+                // BYEEEE ⁠<(⁠๑⁠¯⁠◡⁠¯⁠๑)⁠ﾉ
+                #region BANNER
+                Console.ForegroundColor= ConsoleColor.DarkCyan;
+                string goodByeSign = $"   \t\t\t    ____ ____ ____ ____ _________ ____ ____ ____ \r\n\t\t\t   ||G |||o |||o |||d |||       |||B |||y |||e ||\r\n\t\t\t   ||__|||__|||__|||__|||_______|||__|||__|||__||\r\n\t\t\t   |/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|";
+                Console.WriteLine(goodByeSign);
+                Console.ResetColor();
+                #endregion
+                return; 
+            }
             
         }
     }

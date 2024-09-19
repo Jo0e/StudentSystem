@@ -8,41 +8,13 @@ namespace P01_StudentSystem
     {
         static void Main(string[] args)
         {
-
-            //using (var context = new ApplicationDbContext())
-            //{
-            //    var entityToDelete = context.Resources.FirstOrDefault(e => e.ResourceId == 4);
-            //    if (entityToDelete != null)
-            //    {
-            //        context.Remove(entityToDelete);
-            //        context.SaveChanges();
-            //        Console.WriteLine("Entity deleted successfully.");
-            //    }
-            //}
-
-
-            //using (var context = new ApplicationDbContext())
-            //{
-            // context.StudentCourses.ExecuteDelete();
-            //context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
-            //}
-
-            //USE THIS TO ADD DATA////
+            ////USE THIS TO ADD DATA FROM THE SEED METHOD////
 
             //using (var context = new ApplicationDbContext())
             //{
             //    context.Database.EnsureCreated();
             //    context.Seed();
-            //    Console.WriteLine("Database seeded with sample data.");
-            //}
-
-
-            //ApplicationDbContext context = new ApplicationDbContext();
-            //var result = context.StudentCourses.Include(e => e.Student).Include(e => e.Course).ToList();
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine($"{item.Student.Name} --- {item.Course.Name}");
+            //    Console.WriteLine("Database seed done.");
             //}
 
             PresentStartPage presentStartPage = new PresentStartPage();

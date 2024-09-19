@@ -49,6 +49,7 @@ namespace P01_StudentSystem
                     Console.ResetColor();
                     Thread.Sleep(1500);
                     Console.Clear();
+                    // IF LOGIN INFORMATION WRONG U WILL GET BACK TO MAIN MENU
                     PresentStartPage= new PresentStartPage();
                     PresentStartPage.PresentStartPageCall();
                 }
@@ -56,7 +57,7 @@ namespace P01_StudentSystem
         }
         public void Actions() 
         {
-           
+            #region BANNER
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             string banner = $"\r\n                           ___ _           _         _     __  __              \r\n                          / __| |_ _  _ __| |___ _ _| |_  |  \\/  |___ _ _ _  _ \r\n                          \\__ |  _| || / _` / -_| ' |  _| | |\\/| / -_| ' | || |\r\n                          |___/\\__|\\_,_\\__,_\\___|_||_\\__| |_|  |_\\___|_||_\\_,_|\r\n                                                                               \r\n";
@@ -73,10 +74,10 @@ namespace P01_StudentSystem
                 Console.ResetColor();
                 typeOfAction = Console.ReadLine();
             }
-
+            #endregion
+            // GOD HELP US WITH ALL THOSE BANNERS ⁠(ノ⁠ಠ⁠_⁠ಠ⁠ノ⁠)
             if (typeOfAction == "1")
-            {
-                //To Assign  Course 
+            { 
                 var courses = Context.Courses.ToList();
 
                 Console.WriteLine();
@@ -134,7 +135,6 @@ namespace P01_StudentSystem
 
             else if (typeOfAction == "2")
             {
-                //To Add Homework
                 var AssignedCourses = Context.StudentCourses.Include(e=>e.Course).Include(e=>e.Student).Where(e=>e.StudentId==StudentId).ToList();
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"                                        ->Currently Available Courses:-  ");
@@ -164,7 +164,7 @@ namespace P01_StudentSystem
                 if (checkCourse == null)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("                                        ->Course not found.");
+                    Console.WriteLine("                                        ->Course not found, Or you are not enrolled in.");
                     Console.ResetColor();
                     Thread.Sleep(1100);
                     Actions();
@@ -192,6 +192,7 @@ namespace P01_StudentSystem
             }
             else if (typeOfAction == "3")
             {
+                //THIS ONLY SHOW THE RESOURCE THAT THIS.STUDENT HAVE
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"                                        ->Your Courses:-");
                 Console.ResetColor();
