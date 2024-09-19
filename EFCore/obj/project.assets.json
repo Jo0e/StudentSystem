@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\The DML Task\\EFCore\\BikeStores.csproj",
+      "projectUniqueName": "D:\\asp.net sec\\EfCoreTasks\\EFCore\\BikeStores.csproj",
       "projectName": "BikeStores",
-      "projectPath": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\The DML Task\\EFCore\\BikeStores.csproj",
+      "projectPath": "D:\\asp.net sec\\EfCoreTasks\\EFCore\\BikeStores.csproj",
       "packagesPath": "C:\\Users\\Youssef\\.nuget\\packages\\",
-      "outputPath": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\The DML Task\\EFCore\\obj\\",
+      "outputPath": "D:\\asp.net sec\\EfCoreTasks\\EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Youssef\\AppData\\Roaming\\NuGet\\NuGet.Config",
