@@ -95,11 +95,24 @@ namespace P01_StudentSystem.ForManger
             Console.Write($"                                        ->Enter end date (yyyy-mm-dd): ");
             Console.ResetColor();
             DateTime endDate;
-            while (!DateTime.TryParse(Console.ReadLine(), out endDate))
+            while (true)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write($"                                        ->Invalid date format, Try again: ");
-                Console.ResetColor();
+                if (!DateTime.TryParse(Console.ReadLine(), out endDate))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($"                                        ->Invalid date format, Try again: ");
+                    Console.ResetColor();
+                }
+                else if (endDate < startDate)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($"                                        ->End date cannot be earlier than start date, Try again: ");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    break;
+                }
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"                                        ->Enter price:");

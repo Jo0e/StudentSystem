@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BikeStores
-build_property.ProjectDir = D:\asp.net sec\EfCoreTasks\EFCore\
+build_property.ProjectDir = D:\asp.net sec\Tasks\D02EFCore - Copy\EFCore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

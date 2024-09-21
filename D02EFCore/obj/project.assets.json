@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\asp.net sec\\EfCoreTasks\\D02EFCore\\P01_StudentSystem.csproj",
+      "projectUniqueName": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\D02EFCore\\P01_StudentSystem.csproj",
       "projectName": "P01_StudentSystem",
-      "projectPath": "D:\\asp.net sec\\EfCoreTasks\\D02EFCore\\P01_StudentSystem.csproj",
+      "projectPath": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\D02EFCore\\P01_StudentSystem.csproj",
       "packagesPath": "C:\\Users\\Youssef\\.nuget\\packages\\",
-      "outputPath": "D:\\asp.net sec\\EfCoreTasks\\D02EFCore\\obj\\",
+      "outputPath": "D:\\asp.net sec\\Tasks\\D02EFCore - Copy\\D02EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Youssef\\AppData\\Roaming\\NuGet\\NuGet.Config",
